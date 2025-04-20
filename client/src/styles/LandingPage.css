@@ -1,0 +1,240 @@
+/* filepath: c:\Users\ricar\Desktop\Proyecto\baloncesto-academia\client\src\pages\LandingPage.css */
+
+/*
+.landing-page {
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 1;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Opcional: evita el scroll si no es necesario 
+}
+
+html, body, #root {
+    height: 100%;
+}
+/*/
+
+.landing-page {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: black;;
+}
+
+.landing-page img {
+  display: inline;
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+/* Contenedor general */
+.overlay {
+    display: flex;
+    justify-content: center; /* Espacio entre los contenedores */
+    align-items: flex-start; /* Alinea los contenedores en la parte superior */
+    padding: 20px;
+    gap: 20px; /* Espaciado adicional entre los contenedores */
+    margin-top: 100px; /* Espacio superior */
+}
+
+/* Contenedores individuales */
+.container-ataque,
+.container-defensa,
+.container-tiro {
+    color: black;
+    flex: 1;
+    max-width: 150px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Necesario para posicionar el logo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto hover: contenedor seleccionado */
+.container-ataque:hover,
+.container-defensa:hover,
+.container-tiro:hover {
+    transform: scale(1.5); /* Aumenta mucho más el tamaño al pasar el mouse */
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+    background-color: rgba(255, 255, 255, 1); /* Blanco más intenso */
+    z-index: 2; /* Asegura que el contenedor seleccionado esté por encima */
+}
+
+/* Efecto hover: opacar los otros contenedores */
+.container-ataque:hover ~ .container-defensa,
+.container-ataque:hover ~ .container-tiro,
+.container-defensa:hover ~ .container-ataque,
+.container-defensa:hover ~ .container-tiro,
+.container-tiro:hover ~ .container-ataque,
+.container-tiro:hover ~ .container-defensa {
+    opacity: 0.5; /* Reduce la opacidad de los contenedores no seleccionados */
+    transform: scale(1); /* Asegura que los otros contenedores no cambien de tamaño */
+    z-index: 1; /* Mantiene los contenedores no seleccionados en el fondo */
+}
+
+/* Logos */
+.logo-container {
+    position: absolute;
+    top: -40px; /* Hace que el logo sobresalga del contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Ajusta el tamaño del logo */
+    height: auto;
+    z-index: 1;
+}
+
+/* Títulos y contenido */
+.container-ataque h2,
+.container-defensa h2,
+.container-tiro h2 {
+    margin-top: 60px; /* Espacio para evitar que el texto se superponga con el logo */
+}
+
+/* Estilo del navBar */
+.navBar {
+    position: absolute; /* Posiciona el navBar en relación al contenedor */
+    top: 40px; /* Margen superior */
+    right: 60px; /* Margen derecho */
+    display: inline-block;
+    z-index: 100; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Botón de hamburguesa */
+.menuButton {
+    background: transparent;
+    border: 2px solid black; /* Delineado del botón */
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    transition: all 0.3s ease;
+}
+
+.menuButton:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efecto hover */
+}
+
+/* Líneas del botón de hamburguesa */
+.menuButton .line {
+    width: 25px;
+    height: 2px; /* Más delgadas */
+    background-color: black; /* Color más suave */
+    border-radius: 1px; /* Ajuste más delicado */
+    transition: all 0.3s ease;
+}
+
+/* Estilo del menú desplegable */
+.menuBarBurger {
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 50px;
+    right: 0; /* Alinea el menú con el botón */
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 10px;
+    list-style: none;
+    z-index: 10;
+}
+
+.menuBarBurger li {
+    margin: 5px 0;
+}
+
+.menuBarBurger li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Mostrar el menú al pasar el ratón */
+.navBar:hover .menuBarBurger {
+    display: block; /* Muestra el menú */
+}
+
+/* Sidebar */
+.nav-sidebar {
+    width: 40px;
+    background: #2c3e50;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.nav-sidebar.open {
+    width: 120px;
+}
+
+/* Menú */
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #3498db;
+}
+
+/* Íconos */
+.nav-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* Texto */
+.nav-text {
+    font-size: 12px;
+    color: white;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-sidebar.open .nav-text {
+    display: inline;
+    opacity: 1;
+}
+
+/* Asegúrate de que las clases sean específicas */
+.landing-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.landing-menu-item {
+    margin: 0 10px;
+    color: black;
+}

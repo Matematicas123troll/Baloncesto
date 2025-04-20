@@ -1,0 +1,164 @@
+/* File: client/src/styles/Nav.css */
+
+:root {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  background-color: #2e3233;
+  color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 50px;
+  background: #2c3e50;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 100;
+  font-family: 'Jersey', sans-serif;
+  font-size: 1rem;
+  color: white;
+  transition: width 0.4s ease-in-out, box-shadow 0.4s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.open {
+  width: 150px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 8px;
+  background-color: #111927;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.toggle-btn::after {
+  content: '☰';
+  color: white;
+  margin-left: 8px;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-btn:hover::after {
+  opacity: 1;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.3s, color 0.3s;
+  text-transform: uppercase;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+/* Íconos */
+.icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* Texto */
+.text {
+  font-size: 14px;
+  color: white;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.open .text {
+  display: inline;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 30px;
+  }
+
+  .sidebar.open {
+    width: 100px;
+  }
+
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    width: 25px;
+  }
+
+  .sidebar.open {
+    width: 80px;
+  }
+
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .text {
+    font-size: 8px;
+  }
+}

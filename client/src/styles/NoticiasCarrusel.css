@@ -1,0 +1,29 @@
+/* Contenedor general del carrusel */
+.noticias-container {
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 0; /* Sin espaciado interno adicional */
+  overflow: hidden; /* Oculta el desbordamiento */
+}
+
+/* Título de la sección */
+.noticias-titulo {
+  font-size: 1.5rem; /* Tamaño del texto */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Contenedor de cada slide individual */
+.noticia-slide {
+  padding: 0.5rem;
+}
+
+/* Imagen dentro del slide */
+.noticia-img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}

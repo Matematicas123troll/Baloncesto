@@ -1,0 +1,158 @@
+/* Importa la fuente personalizada */
+@font-face {
+    font-family: 'Varsity Team'; /* Fuente para el título */
+    src: url('../assets/fonts/VarsityTeam-Bold.woff') format('woff'); /* Ruta relativa al archivo de la fuente */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jersey'; /* Fuente para el contenido */
+    src: url('../assets/fonts/Jersey M54.woff') format('truetype'); /* Ruta relativa al archivo de la fuente */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilo principal para el body de la página Home */
+.home-body {
+    font-family: 'Varsity Team', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #5a586b;
+    position: relative; /* Permite posicionar elementos hijos con posición absoluta */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga del contenedor */
+}
+
+/* PROPIEDADES DE LA IMAGEN DE FONDO */
+/* Imagen decorativa adicional en la esquina inferior derecha */
+/*
+.home-body::after {
+    content: ""; 
+    position: absolute;
+    bottom: 0; 
+    right: 0; 
+    width: 150px; 
+    height: auto;
+    background-image: url('../assets/logoMitadNoFondo.png'); 
+    background-repeat: no-repeat;
+    background-size: contain; 
+    opacity: 0.1; 
+    pointer-events: none; 
+    z-index: -1; 
+}
+*/
+
+@media (max-width: 768px) {
+    /* Reducción del tamaño de la imagen decorativa para pantallas pequeñas */
+    .home-body::after {
+        width: 150px;
+        opacity: 0.1;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste del tamaño y opacidad de la imagen decorativa para pantallas muy pequeñas */
+    .home-body::after {
+        width: 100px;
+        opacity: 0.05;
+    }
+}
+
+@media (max-width: 320px) {
+    /* Ocultación completa de la imagen decorativa en pantallas extremadamente pequeñas */
+    .home-body::after {
+        display: none;
+    }
+}
+
+/* Estilo para el título */
+h1 {
+    font-family: 'Varsity Team', sans-serif; /* Aplica la fuente Varsity Team al título */
+    font-size: 3rem; /* Tamaño de fuente grande */
+    color: black; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+h2 {
+    font-size: 2rem;
+    color: black;
+    margin: 20px 0;
+}
+
+/* Estilo para el contenido principal */
+.content-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Jersey', sans-serif; /* Aplica la fuente Jersey al contenido */
+    font-size: 1.2rem; /* Tamaño de fuente estándar */
+    color: black; /* Color del texto */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+    margin: 0 20px; /* Espaciado lateral */
+    padding: 20px;
+    
+}
+
+/* Estilos para las secciones de Noticias y Perfil */
+.content-noticias,
+.content-perfil {
+    width: 50%; /* Ancho del 50% para cada sección */
+    height: 300px;
+    border-radius: 2%;
+    font-family: 'Jersey', sans-serif; /* Aplica la fuente Jersey al contenido */
+    font-size: 1.2rem; /* Tamaño de fuente estándar */
+    color: black; /* Color del texto */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+    margin: 0 20px; /* Espaciado lateral */
+    padding: 20px;
+    background-color: #aa1c1c;
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    align-content: center;
+}
+
+/* Contenedor de Noticias */
+.content-noticias {
+  display: flex;
+  flex-direction: column; /* Asegura que el título y el carrusel estén en columnas */
+  align-items: center; /* Centra el contenido horizontalmente */
+  padding: 1rem; /* Espaciado interno */
+  background-color: #f9f9f9; /* Fondo claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 1rem auto; /* Centrado horizontal y margen superior/inferior */
+  max-width: 800px; /* Ancho máximo del contenedor */
+}
+
+/* Contenedor de perfil */
+.content-perfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 800px; /* Ancho máximo */
+  margin: 20px auto; /* Centrado horizontal */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Incluye el padding en las dimensiones */
+  overflow: hidden; /* Oculta cualquier contenido que se salga del contenedor */
+}
+
+/* Contenedor de Acceso Rápido */
+.content-acceso-rapido {
+    font-family: 'Jersey', sans-serif; /* Aplica la fuente Jersey al contenido */
+    font-size: 1.2rem; /* Tamaño de fuente estándar */
+    color: black; /* Color del texto */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+    margin: 0 20px; /* Espaciado lateral */
+    padding: 20px;
+    background-color: green;
+    border-radius: 2%;
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+}
